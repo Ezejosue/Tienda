@@ -8,9 +8,9 @@ class conexion
 /*
     Estos son los atributos de la clase para almacenar los datos necesarios para realizar las acciones respectivas.
 */
-    private static $connection = null;
+   /*  private static $connection = null;
     private static $statement = null;
-    private static $id = null;
+    private static $id = null; */
 /*
     Este método tiene por objetivo establecer la conexión con la base de datos utilizando las credenciales respectivas.
     No recibe parámetros y no devuelve ningún valor, capturando las excepciones del servidor de bases de datos.
@@ -18,11 +18,11 @@ class conexion
     private function connect()
     {
         $server = 'localhost';
-        $db = 'focusview';
+        $db = 'FocusView';
         $username = 'root';
         $password = '';
         try {
-            @self::$connection = new PDO('mysql:host='.$server.'; dbname='.$database.'; charset=utf8', $username, $password);
+            $connection = new PDO('mysql:host='.$server.'; dbname='.$db, $username, $password);
         } catch(PDOException $error) {
             exit(self::getException($error->getCode(), $error->getMessage()));
         }
