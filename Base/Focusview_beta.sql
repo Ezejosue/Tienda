@@ -68,6 +68,7 @@ CREATE TABLE Usuarios(
     Nombre VARCHAR(20),
     Apellido VARCHAR(20),
     Genero ENUM('M','F','ND') DEFAULT 'ND',
+    Nombre_Usuario VARCHAR (20) NOT NULL,
     Correo VARCHAR(100) UNIQUE NOT NULL,
     Clave VARCHAR(30) NOT NULL,
     Estado TINYINT(1) NOT NULL DEFAULT 1 COMMENT '1 es activo 0 es inactivo',
@@ -472,7 +473,7 @@ END$$
 DELIMITER ;
 --Procedure
 
---Update tipo usuarios
+/* --Update tipo usuarios
 UPDATE TipoUsuario SET Nombre_usuario = `ADMIN` where id_Tipousuario = 1;
 UPDATE TipoUsuario SET Estado = 0 where id_Tipousuario = 1;
 --Update tipo usuarios
@@ -549,7 +550,7 @@ DELETE FROM Garantia WHERE id_garantia = 1;
 
 
 --Delete detalle de venta
-DELETE FROM DetalleVenta WHERE id_detalleventa = 15; 
+DELETE FROM DetalleVenta WHERE id_detalleventa = 15;  */
 --Delete detalle de venta
 
 --Consultas multitabla
