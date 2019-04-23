@@ -34,13 +34,13 @@ function checkUsuarios()
 }
 
 //Función para validar el usuario al momento de iniciar sesión
-$('#form-sesion').submit(function()
+$('#form-login').submit(function()
 {
     event.preventDefault();
     $.ajax({
         url: apiSesion + 'login',
         type: 'post',
-        data: $('#form-sesion').serialize(),
+        data: $('#form-login').serialize(),
         datatype: 'json'
     })
     .done(function(response){
