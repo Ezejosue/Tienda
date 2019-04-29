@@ -3,14 +3,14 @@
     Este archivo contiene una clase para realizar el manejo de la base de datos del sistema.
 */
 
-class conexion 
+class Conexion 
 {
 /*
     Estos son los atributos de la clase para almacenar los datos necesarios para realizar las acciones respectivas.
 */
-   /*  private static $connection = null;
+    private static $connection = null;
     private static $statement = null;
-    private static $id = null; */
+    private static $id = null;
 /*
     Este método tiene por objetivo establecer la conexión con la base de datos utilizando las credenciales respectivas.
     No recibe parámetros y no devuelve ningún valor, capturando las excepciones del servidor de bases de datos.
@@ -22,7 +22,7 @@ class conexion
         $username = 'root';
         $password = '';
         try {
-            $connection = new PDO('mysql:host='.$server.'; dbname='.$db, $username, $password);
+            @self::$connection = new PDO('mysql:host='.$server.'; dbname='.$db, $username, $password);
         } catch(PDOException $error) {
             exit(self::getException($error->getCode(), $error->getMessage()));
         }

@@ -6,7 +6,6 @@ class Usuarios extends Validator
 	private $nombres = null;
 	private $apellidos = null;
 	private $correo = null;
-	private $alias = null;
 	private $clave = null;
 	private $Nombre_Usuario = null;
     
@@ -71,21 +70,6 @@ class Usuarios extends Validator
 		return $this->correo;
 	}
 
-	public function setAlias($value)
-	{
-		if ($this->validateAlphanumeric($value, 1, 50)) {
-			$this->alias = $value;
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public function getAlias()
-	{
-		return $this->alias;
-	}
-
 	public function setClave($value)
 	{
 		if ($this->validatePassword($value)) {
@@ -147,7 +131,7 @@ class Usuarios extends Validator
 	//Metodos para manejar el CRUD
 	public function readUsuarios()
 	{
-		$sql = 'SELECT id_usuario, Nombre, Apellido, Genero, Correo, Estado FROM usuarios ORDER BY apellidos_usuario';
+		$sql = 'SELECT id_usuario, Nombre, Apellido, Genero, Nombre_Usuario, Correo, Estado FROM Usuarios ORDER BY Apellido';
 		$params = array(null);
 		return Conexion::getRows($sql, $params);
 	}
@@ -169,7 +153,7 @@ class Usuarios extends Validator
 
 	public function getUsuario()
 	{
-		$sql = 'SELECT id_usuario, Nombre, Apellido, Correo, Nombre FROM Usuarios WHERE id_usuario = ?';
+		$sql = 'SELECT id_usuario, Nombre, Apellido, Correo, Nombre_Usuario FROM Usuarios WHERE id_usuario = ?';
 		$params = array($this->id);
 		return Conexion::getRow($sql, $params);
 	}

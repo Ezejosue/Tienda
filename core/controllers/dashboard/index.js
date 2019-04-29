@@ -4,7 +4,7 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiSesion = '../../core/api/usuarios.php?site=dashboard&action=';
+const apiSesion = '../../core/api/usuarios.php?site=private&action=';
 
 //Función para verificar si existen usuarios en el sitio privado
 function checkUsuarios()
@@ -34,7 +34,7 @@ function checkUsuarios()
 }
 
 //Función para validar el usuario al momento de iniciar sesión
-$('#form-login').submit(function()
+$('#form-sesion').submit(function()
 {
     event.preventDefault();
     $.ajax({

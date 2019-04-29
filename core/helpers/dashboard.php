@@ -23,7 +23,7 @@ class Dashboard
             
             <body>
         ');
-		if (isset($_SESSION['idUsuario'])) {
+		if (isset($_SESSION['id_usuario'])) {
 			$filename = basename($_SERVER['PHP_SELF']);
 			if ($filename != 'index.php') {
 				self::modals();
