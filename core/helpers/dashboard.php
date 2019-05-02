@@ -4,7 +4,6 @@ class Dashboard
 	public static function headerTemplate($title)
 	{
 		session_start();
-		ini_set('date.timezone', 'America/El_Salvador');
         print('
             <!DOCTYPE html>
             <html lang="es">
@@ -114,5 +113,5 @@ public static function footerTemplate($controller)
         ');
     }
 }
-
+?>
             

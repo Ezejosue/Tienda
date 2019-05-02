@@ -40,7 +40,7 @@ $('#form-sesion').submit(function()
     $.ajax({
         url: apiSesion + 'login',
         type: 'post',
-        data: $('#form-login').serialize(),
+        data: $('#form-sesion').serialize(),
         datatype: 'json'
     })
     .done(function(response){

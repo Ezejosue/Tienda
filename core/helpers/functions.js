@@ -43,7 +43,6 @@ function sweetAlert(type, text, url)
             closeOnEsc: false
         })
         .then(function(value){
-            console.log(value);
             location.href = url
         });
     } else {
