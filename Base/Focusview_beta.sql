@@ -33,15 +33,15 @@ CREATE TABLE Cliente(
 
 CREATE TABLE Categoria(
     id_categoria INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    Nombre_categoria VARCHAR(50),
+    Nombre_categoria VARCHAR(50) NOT NULL,
     Imagen_categoria varchar(50) NOT NULL,
-    Descripcion VARCHAR(200));
+    Descripcion_categoria VARCHAR(200)) NOT NULL;
 
 CREATE TABLE Producto(
     id_producto INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     Nombre_producto VARCHAR(50),
-    Descripcion VARCHAR(200),
-    Precio decimal(5,2) DEFAULT '0.00' NOT NULL,
+    Descripcion_producto VARCHAR(200),
+    Precio_producto decimal(5,2) DEFAULT '0.00' NOT NULL,
     Imagen_producto varchar(50) NOT NULL,
     Estado_producto tinyint(1) NOT NULL DEFAULT '1',
     id_categoria INT UNSIGNED,
@@ -69,15 +69,11 @@ CREATE TABLE Garantia(
 
 CREATE TABLE Usuarios(
     id_usuario INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    Nombre VARCHAR(20),
-    Apellido VARCHAR(20),
-    Genero ENUM('M','F','ND') DEFAULT 'ND',
+    Nombre VARCHAR(50) NOT NULL,
+    Apellido VARCHAR(50) NOT NULL,
     Nombre_Usuario VARCHAR (20) NOT NULL,
     Correo VARCHAR(100) UNIQUE NOT NULL,
-    Clave VARCHAR(30) NOT NULL,
-    Estado TINYINT(1) NOT NULL DEFAULT 1 COMMENT '1 es activo 0 es inactivo',
-    id_Tipousuario INT UNSIGNED,
-    FOREIGN KEY (id_Tipousuario) REFERENCES TipoUsuario(id_Tipousuario));
+    Clave VARCHAR(100) NOT NULL;
 
    
 CREATE TABLE DetalleVenta(
