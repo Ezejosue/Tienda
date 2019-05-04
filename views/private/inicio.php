@@ -1,8 +1,7 @@
 <?php
 require_once('../../core/helpers/dashboard.php');
-Dashboard::headerTemplate('Administrar categorías');
+Dashboard::headerTemplate('Inicio');
 ?>
-    <div class="d-flex" id="wrapper">
             <div class="container-fluid" id="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -80,17 +79,6 @@ Dashboard::headerTemplate('Administrar categorías');
             <!-- Fin contenido -->
         </div>
 
-        <script src="../../resources/js/jquery.min.js"></script>
-        <script src="../../resources/js/estilo-dash.js"></script>
-        <script src="../../resources/js/font-awesome.js"></script>
-        <script src="../../resources/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Menu Toggle Script -->
-        <script>
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-        </script>
-</body>
-</html>
+        <?php
+Dashboard::footerTemplate('inicio.js', '');
+?>

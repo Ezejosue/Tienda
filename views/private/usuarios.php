@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard - '.$title.' </title>
-
-    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../resources/css/login.css">
-</head>
-
-<body>
+<?php
+require_once('../../core/helpers/dashboard.php');
+Dashboard::headerTemplate('Usuarios');
+?>
     <div class="d-flex" id="wrapper">
         <!-- Contenido -->
         <div id="page-content-wrapper">
@@ -124,23 +114,6 @@
         </div>
     </div>
 
-    <script src="../../resources/js/jquery.min.js"></script>
-    <script src="../../resources/js/font-awesome.js"></script>
-    <script src="../../resources/js/DataTable.js"></script>
-    <script src="../../resources/js/sweetalert.min.js"></script>
-    <script src="../../resources/js/bootstrap.bundle.min.js"></script>
-
-    <script type="text/javascript" src="../../core/helpers/functions.js"></script>
-    <script type="text/javascript" src="../../core/controllers/dashboard/account.js"></script>
-    <script type="text/javascript" src="../../core/controllers/dashboard/usuarios.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
-</body>
-
-</html>
+    <?php
+Dashboard::footerTemplate('productos.js');
+?>
