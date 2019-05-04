@@ -20,20 +20,6 @@ triggerUpload.onclick = function() {
   upInput.click();
 };
 
-
-upInput.onchange = function(e) {
-
-  var uploaded = this.value,
-      ext = uploaded.substring(uploaded.lastIndexOf('.') + 1),
-      ext = ext.toLowerCase(),
-      fileName = uploaded.substring(uploaded.lastIndexOf("\\") + 1),
-      accepted = ["jpg", "png", "gif", "jpeg"];
-  
-  /*
-    ::Add in blank img tag and spinner
-    ::Use FileReader to read the img data
-    ::Set the image source to the FileReader data
-  */
   function showPreview() {
       preview.innerHTML = "<div class='loadingLogo'></div>";
 	    preview.innerHTML += '<img id="img-preview" />';
@@ -55,7 +41,7 @@ upInput.onchange = function(e) {
     document.querySelector('.fileName').innerHTML = "Hey! Upload an image file, not a <b>." + ext + "</b> file!";
   }
   
-}
+
 
 
 

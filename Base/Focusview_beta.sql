@@ -33,17 +33,21 @@ CREATE TABLE Cliente(
 
 CREATE TABLE Categoria(
     id_categoria INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    Nombre_categoria VARCHAR(20),
-    Descripcion VARCHAR(1000));
+    Nombre_categoria VARCHAR(50),
+    Imagen_categoria varchar(50) NOT NULL,
+    Descripcion VARCHAR(200));
 
 CREATE TABLE Producto(
     id_producto INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    Nombre_producto VARCHAR(20),
-    Descripcion VARCHAR(1000),
-    Precio DOUBLE(6,2) DEFAULT NULL,
-    Cantidad INT UNSIGNED DEFAULT NULL,
+    Nombre_producto VARCHAR(50),
+    Descripcion VARCHAR(200),
+    Precio decimal(5,2) DEFAULT '0.00' NOT NULL,
+    Imagen_producto varchar(50) NOT NULL,
+    Estado_producto tinyint(1) NOT NULL DEFAULT '1',
     id_categoria INT UNSIGNED,
     FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria));
+    
+    
 
 CREATE TABLE Compra(
     id_compra INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
