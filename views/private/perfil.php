@@ -27,10 +27,7 @@
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <!-- Navbar -->
-            <?php
-                require "../templates/navbar-dash.php";
-                navbar::menu2();
-            ?>
+           
             <!-- Fin navbar -->
             <div class="container-fluid" id="container">
                 <h1 class="text-center">EDITAR PERFIL</h1>
