@@ -248,6 +248,6 @@ Dashboard::headerTemplate('Productos');
     </div>
 </div>
 
-<?php
+            <?php
 Dashboard::footerTemplate('productos.js');
 ?>

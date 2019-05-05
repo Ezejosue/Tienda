@@ -20,7 +20,8 @@ class Dashboard
             <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
             <link href="../../resources/css/font-awesome.css" rel="stylesheet">
 			<link href="../../resources/css/estilo.css" rel="stylesheet">
-			<link href="../../resources/css/subir-imagen.css" rel="stylesheet">
+			<link href="../../resources/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+			<link href="../../resources/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
             <script src="../../resources/js/chart.bundle.js"></script>
         </head>
         
@@ -118,25 +119,37 @@ class Dashboard
 		}
 	}
 
-	public static function footerTemplate($controller)
+	public static function footerTemplate($controller, $tabla)
 	{
 		print('
-		<script src="../../resources/js/sweetalert.min.js"></script>
+
+		<script src="../../core/helpers/table.js"></script>
         <script src="../../resources/js/jquery.min.js"></script>
+        <script src="../../resources/js/estilo-dash.js"></script>
         <script src="../../resources/js/font-awesome.js"></script>
 		<script src="../../resources/js/bootstrap.bundle.min.js"></script>
+		<script src="../../resources/js/jquery.dataTables.min.js"></script>
+		<script src="../../resources/js/dataTables.bootstrap4.min.js"></script>
 		
+		<script src="../../resources/js/sweetalert.min.js"></script>
+
         <script type="text/javascript" src="../../core/helpers/functions.js"></script>
 		<script type="text/javascript" src="../../core/controllers/dashboard/account.js"></script>
 		<script type="text/javascript" src="../../core/controllers/dashboard/'.$controller.'"></script>
 
         <!-- Menu Toggle Script -->
         <script>
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-        </script>
+			$("#menu-toggle").click(function (e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("toggled");
+			});
+		</script>
+		<script>
+			$(document).ready(function() {
+			$('.$tabla.').DataTable();
+			});
+		</script>
+		
 </body>
 </html>
 		');

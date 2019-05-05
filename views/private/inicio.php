@@ -80,5 +80,5 @@ Dashboard::headerTemplate('Inicio');
         </div>
 
         <?php
-Dashboard::footerTemplate('inicio.js');
+Dashboard::footerTemplate('inicio.js', '');
 ?>

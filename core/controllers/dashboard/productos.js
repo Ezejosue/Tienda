@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$(document).ready(function()
+{
     showTable();
     showSelectCategorias('create_categoria', null);
 })

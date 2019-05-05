@@ -41,7 +41,7 @@ triggerUpload.onclick = function() {
     document.querySelector('.fileName').innerHTML = "Hey! Upload an image file, not a <b>." + ext + "</b> file!";
   }
   
-}
+
 
 
 
