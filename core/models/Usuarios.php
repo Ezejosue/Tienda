@@ -137,7 +137,7 @@ class Usuarios extends Validator
 	//Metodos para manejar el CRUD
 	public function readUsuarios()
 	{
-		$sql = 'SELECT Nombre, Apellido, Nombre_Usuario, Correo, CLave FROM usuarios ORDER BY Apellido';
+		$sql = 'SELECT id_usuario, Nombre, Apellido, Nombre_Usuario, Correo, CLave FROM usuarios ORDER BY Apellido';
 		$params = array(null);
 		return Conexion::getRows($sql, $params);
 	}
@@ -167,7 +167,7 @@ class Usuarios extends Validator
 	public function updateUsuario()
 	{
 		$sql = 'UPDATE usuarios SET Nombre = ?, Apellido = ?, Nombre_Usuario = ?, Correo = ? WHERE id_usuario = ?';
-		$params = array($this->nombres, $this->apellidos, $this->correo, $this->alias, $this->id);
+		$params = array($this->nombres, $this->apellidos, $this->nombre_usuario, $this->correo, $this->id);
 		return Conexion::executeRow($sql, $params);
 	}
 

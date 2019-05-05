@@ -1,5 +1,5 @@
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiAccount = '../../core/api/usuarios.php?site=dashboard&action=';
+const apiAccount = '../../core/api/usuarios.php?site=private&action=';
 
 //Función para cerrar la sesión del usuario
 function signOff()
@@ -48,7 +48,7 @@ function modalProfile()
                 $('#profile_correo').val(result.dataset.correo_usuario);
                 $('#profile_alias').val(result.dataset.alias_usuario);
                 M.updateTextFields();
-                $('#modal-profile').modal('open');
+                $('#modal-profile').modal('show');
             } else {
                 sweetAlert(2, result.exception, null);
             }
@@ -78,8 +78,8 @@ $('#form-profile').submit(function()
             const result = JSON.parse(response);
             //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
             if (result.status) {
-                $('#modal-profile').modal('close');
-                sweetAlert(1, 'Perfil modificado correctamente', 'main.php');
+                $('#modal-profile').modal('hide');
+                sweetAlert(1, 'Perfil modificado correctamente', 'inicio.php');
             } else {
                 sweetAlert(2, result.exception, null);
             }

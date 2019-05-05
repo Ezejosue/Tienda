@@ -50,7 +50,7 @@ Dashboard::headerTemplate('Categorías');
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-1">
-                            <i class="fa fa-list"></i>
+                            <i class="fa fa-camera"></i>
                         </div>
                         <div class="col-sm-11">
                             <input id="create_nombre" type="text" name="create_nombre" class=" form-control validate"

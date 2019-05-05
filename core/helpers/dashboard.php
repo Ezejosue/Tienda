@@ -76,7 +76,8 @@ class Dashboard
                     <i class="fa fa-user"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="perfil.php">Editar perfil</a>
+                    <a class="dropdown-item tooltipped modal-trigger" href="#modal-profile" data-toggle="modal"
+					data-tooltip="Editar">Editar perfil</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -158,80 +159,67 @@ class Dashboard
 	private function modals()
 	{
 		print('
-			<div id="modal-profile" class="modal">
-				<div class="modal-content">
-					<h4 class="center-align">Editar perfil</h4>
-					<form method="post" id="form-profile">
-						<div class="row">
-							<div class="input-field col s12 m6">
-								<i class="material-icons prefix">person</i>
-								<input id="profile_nombres" type="text" name="profile_nombres" class="validate" required/>
-								<label for="profile_nombres">Nombres</label>
-							</div>
-							<div class="input-field col s12 m6">
-								<i class="material-icons prefix">person</i>
-								<input id="profile_apellidos" type="text" name="profile_apellidos" class="validate" required/>
-								<label for="profile_apellidos">Apellidos</label>
-							</div>
-							<div class="input-field col s12 m6">
-								<i class="material-icons prefix">email</i>
-								<input id="profile_correo" type="email" name="profile_correo" class="validate" required/>
-								<label for="profile_correo">Correo</label>
-							</div>
-							<div class="input-field col s12 m6">
-								<i class="material-icons prefix">person_pin</i>
-								<input id="profile_alias" type="text" name="profile_alias" class="validate" required/>
-								<label for="profile_alias">Alias</label>
-							</div>
+			<div id="modal-profile" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">EDITAR PERFIL</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
 						</div>
-						<div class="row center-align">
-							<a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
-							<button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Guardar"><i class="material-icons">save</i></button>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div id="modal-password" class="modal">
-				<div class="modal-content">
-					<h4 class="center-align">Cambiar contraseña</h4>
-					<form method="post" id="form-password">
-						<div class="row center-align">
-							<label>CLAVE ACTUAL</label>
-						</div>
-						<div class="row">
-							<div class="input-field col s12 m6">
-								<i class="material-icons prefix">security</i>
-								<input id="clave_actual_1" type="password" name="clave_actual_1" class="validate" required/>
-								<label for="clave_actual_1">Clave</label>
+						<form method="post" id="form-profile">
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-sm-1">
+										<i class="fa fa-user"></i>
+									</div>
+									<div class="col-sm-11">
+                            			<input id="profile_nombres" type="text" name="profile_nombres" class="form-control validate required"
+                                			required>
+									</div>
+								</div>
 							</div>
-							<div class="input-field col s12 m6">
-								<i class="material-icons prefix">security</i>
-								<input id="clave_actual_2" type="password" name="clave_actual_2" class="validate" required/>
-								<label for="clave_actual_2">Confirmar clave</label>
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-sm-1">
+										<i class="fa fa-user"></i>
+									</div>
+									<div class="col-sm-11">
+                            			<input id="profile_apellidos" type="text" name="profile_apellidos" class="form-control validate required"
+                                			required>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="row center-align">
-							<label>CLAVE NUEVA</label>
-						</div>
-						<div class="row">
-							<div class="input-field col s12 m6">
-								<i class="material-icons prefix">security</i>
-								<input id="clave_nueva_1" type="password" name="clave_nueva_1" class="validate" required/>
-								<label for="clave_nueva_1">Clave</label>
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-sm-1">
+										<i class="fa fa-envelope"></i>
+									</div>
+									<div class="col-sm-11">
+                            			<input id="profile_correo" type="email" name="profile_correo" class="form-control validate required"
+                                			required>
+									</div>
+								</div>
 							</div>
-							<div class="input-field col s12 m6">
-								<i class="material-icons prefix">security</i>
-								<input id="clave_nueva_2" type="password" name="clave_nueva_2" class="validate" required/>
-								<label for="clave_nueva_2">Confirmar clave</label>
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-sm-1">
+										<i class="fa fa-user-shield"></i>
+									</div>
+									<div class="col-sm-11">
+                            			<input id="profile_alias" type="text" name="profile_alias" class="form-control validate required"
+                                			required>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="row center-align">
-							<a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
-							<button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Cambiar"><i class="material-icons">save</i></button>
-						</div>
-					</form>
-				</div>
+								<div class="modal-body text-center">
+                    				<button type="button" class="btn btn-secondary tooltipped" data-tooltip="Cancelar" data-dismiss="modal">Cancelar</button>
+                    				<button type="submit" class="btn btn-primary tooltipped" data-tooltip="Guardar">Guardar</button>
+                				</div>
+							</div>
+						</form>
+					</div>
 			</div>
 		');
 	}

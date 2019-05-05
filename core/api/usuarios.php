@@ -36,7 +36,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                         if ($usuario->setNombres($_POST['profile_nombres'])) {
                             if ($usuario->setApellidos($_POST['profile_apellidos'])) {
                                 if ($usuario->setCorreo($_POST['profile_correo'])) {
-                                    if ($usuario->setAlias($_POST['profile_alias'])) {
+                                    if ($usuario->setNombre_usuario($_POST['profile_alias'])) {
                                         if ($usuario->updateUsuario()) {
                                             $_SESSION['aliasUsuario'] = $_POST['profile_alias'];
                                             $result['status'] = 1;
