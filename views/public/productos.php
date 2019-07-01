@@ -289,6 +289,7 @@
     <script src="../../resources/js/modals.js"></script>
     <script src="../../resources/js/modal1.js"></script>
     <script src="../../resources/js/font-awesome.js"></script>
+    
 </body>
 
 </html>
